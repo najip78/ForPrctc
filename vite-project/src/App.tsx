@@ -1,29 +1,37 @@
 import React, { useState } from "react";
-import useStore from "./store/SimpleStore";
+
+import "./../public/Main.css";
 
 export default function App() {
-  const { names, setName } = useStore(); // Access the store's state and actions
+  const [anima, seanima] = useState(localStorage.getItem("animationState")); // Fixed useState initialization
 
-  const handleInputChange = (e, index) => {
-    setName(index, e.target.value); // Update the name at the specified index
+  const handleanima = () => {
+    if (!anima) { seanima(true) }
+    else { seanima(false) }
+    localStorage.setItem("animationState", anima)
   };
+
 
   return (
     <>
-      {/* Loop through the array and display the names */}
-      {names.map((item, index) => (
-        <div key={index}>
-          <p>{item}</p>
-          <input
-            type="text"
-            value={item}
-            onChange={(e) => handleInputChange(e, index)} // Handle input change
-          />
-        </div>
-      ))}
+
+      {/* Animated element */}
+      <div className="cnt">
+        <div className={anima ? "linearG" : ""}></div>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk9DEjKh8GLGA0rK2B_YhYmzRpvyXyBUV_kw&s"
+          alt="Animation Example"
+        />
+        <img
+          onClick={handleanima}
+          className="sp"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZqFEU0exC2YETi1Aq9fyi2i7QV7s6rt9tVA&s"
+          alt="Stop Animation Example"
+        />
+      </div>
     </>
   );
 }
 
-console.log(">>>>>>>>>>")
-console.log("............")
+console.log(">>>>>>>>>>");
+console.log("..........");

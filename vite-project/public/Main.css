@@ -1,0 +1,73 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+button {
+    color: white;
+    font-size: 20px;
+    padding: 20px 20px;
+    margin-left: 5px;
+    border-radius: 10px;
+    border-color: linearGrod;
+    background-image: linear-gradient(180deg, #2d2d2d, skyblue);
+}
+
+/* keyframes */
+@keyframes linearG {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.linearG {
+    height: 2rem;
+    width: 2rem;
+    animation-name: linearG;
+    animation-duration: 1s;
+    /* 1 minute */
+    animation-timing-function: linear;
+    /* Smooth continuous rotation */
+    animation-iteration-count: infinite;
+    /* Loops infinitely */
+    border-radius: 50%;
+    background-image: conic-gradient(rgb(255, 255, 255), yellow, rgb(12, 164, 252), white, black);
+}
+
+h2 {
+    color: white;
+}
+
+.cnt {
+    margin-bottom: 10px;
+    padding: 10px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 20px;
+    background-image: url("https://images.pexels.com/photos/604684/pexels-photo-604684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.cnt img {
+    width: 60%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.cnt .sp {
+    width: 20px;
+    border-radius: 10px;
+}
